@@ -1,14 +1,19 @@
 import React from 'react';
+// import Home from './Home';
+// import Meals from './Meals';
+// import Drinks from '../screens/Drinks';
+// import Order from '../screens/Order';
+import Receipt from '../screens/Receipt';
 import './Screen.css'
 
 const Screen = () => {
 
 	return (
 		<div className="screen-container">
-			<div className="slideshow"></div>
-			<div className="orderbox"></div>
-			<div className="findbox"></div>
-			<div className="contentbox"></div>
+			{/* <Home /> */}
+			{/* <Meals /> */}
+			{/* <Order /> */}
+			<Receipt />
 		</div>
 	);
 }

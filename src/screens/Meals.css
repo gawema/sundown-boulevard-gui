@@ -1,0 +1,24 @@
+.box {
+	border: 3px solid #333;
+	width: 100%;
+	height: 100%;
+}
+
+.meal {
+	grid-row-start: 1;
+	grid-row-end: 3;
+	grid-column-start: 1;
+	grid-column-end: 5;
+
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+}
+.meal img {
+	border-bottom: 3px solid #333;
+}
+
+
+.order-details {
+	grid-column-start: 5;
+	grid-column-end: 7;
+}

@@ -5,8 +5,8 @@
 
 .header {
 	margin: 0 auto;	
-	width: 70vw;
-	min-width: 700px;
+	width: 60vw;
+	min-width: 500px;
 	min-height: 50px;
 	padding: 20px;
 	display: flex;
