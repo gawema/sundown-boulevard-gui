@@ -9,6 +9,8 @@
 	flex-wrap: wrap;
 	overflow: scroll;
 	overflow-x: hidden;
+	flex-direction: row;
+    justify-content: space-around;
 }
 
 .drink-card {

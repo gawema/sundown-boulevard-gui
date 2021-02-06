@@ -5,3 +5,14 @@
 	grid-column-start: 1;
 	grid-column-end: 7;
 }
+
+.react-calendar {
+    border: 3px solid #333 !important;
+}
+
+.react-calendar__tile--active {
+    background: #007DDB !important;
+}
+.react-calendar__tile--now {
+    background:  #007cdb84 !important;
+}

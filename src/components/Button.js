@@ -6,7 +6,7 @@ const Button = (props) => {
 	return (
 		<button 
 			onClick={props.onClick} 
-			className={props.center && 'center-btn'}
+			className={props.center ? 'center btn':'btn'}
 			style={props.style}
 			>
 			{props.command}

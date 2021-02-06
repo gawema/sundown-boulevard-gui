@@ -1,20 +1,20 @@
-button {
-	align-self: flex-end;
-    margin: 10px 10px 10px auto;
-	width: 200px;
-	height: 50px;
-	background-color: #BA2329;
-	color: white;
-	text-decoration: uppercase;
-	letter-spacing: 1px;
+.btn {
+    width: 200px;
+    max-width: 100%;
+    height: 50px;
+    background-color: #BA2329;
+    color: white;
+    text-decoration: uppercase;
+    letter-spacing: 1px;
     font-family: 'Roboto Condensed';
     font-size: 1rem;
     font-weight: bold;
-	border-radius: 20px;
-	border: none;
-	outline: none;	
+    border-radius: 20px;
+    border: none;
+	outline: none;
+	align-self: flex-end;
 }
 
-.center-btn {
-	margin: 10px auto;
+.center {
+	align-self: center;
 }

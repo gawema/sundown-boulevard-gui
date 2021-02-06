@@ -7,18 +7,38 @@ const Drinks = () => {
 	return (
 		<>
 			<div className="driks box">
-				<div className="drink-card"></div>
-				<div className="drink-card"></div>
-				<div className="drink-card"></div>
-				<div className="drink-card"></div>
-				<div className="drink-card"></div>
-				<div className="drink-card"></div>
-				<div className="drink-card"></div>
-				<div className="drink-card"></div>
-				<div className="drink-card"></div>
-				<div className="drink-card"></div>
+				<div className="drink-card box">
+					<h2>Name</h2>
+				</div>
+				<div className="drink-card box">
+					<h2>Name</h2>
+				</div>
+				<div className="drink-card box">
+					<h2>Name</h2>
+				</div>
+				<div className="drink-card box">
+					<h2>Name</h2>
+				</div>
+				<div className="drink-card box">
+					<h2>Name</h2>
+				</div>
+				<div className="drink-card box">
+					<h2>Name</h2>
+				</div>
+				<div className="drink-card box">
+					<h2>Name</h2>
+				</div>
+				<div className="drink-card box">
+					<h2>Name</h2>
+				</div>
+				<div className="drink-card box">
+					<h2>Name</h2>
+				</div>
+				<div className="drink-card box">
+					<h2>Name</h2>
+				</div>
 			</div>
-			<OrderStatusBox  command="NEXT" nextStep="place-order"/>
+			<OrderStatusBox command="NEXT" nextStep="place-order"/>
 		</>
 	);
 }

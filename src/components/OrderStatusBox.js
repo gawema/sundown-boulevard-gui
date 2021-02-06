@@ -10,6 +10,7 @@ const OrderStatusBox = (props) => {
 	return (
 		<>
 			<div className="neworder box">
+				<h2>{props.title}</h2	>
 				<Button command={props.command} onClick={() => {
 					history.push({
 						pathname: props.nextStep,
