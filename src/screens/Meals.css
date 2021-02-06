@@ -2,6 +2,8 @@
 	border: 3px solid #333;
 	width: 100%;
 	height: 100%;
+	display: flex;
+
 }
 
 .meal {
@@ -15,10 +17,4 @@
 }
 .meal img {
 	border-bottom: 3px solid #333;
-}
-
-
-.order-details {
-	grid-column-start: 5;
-	grid-column-end: 7;
 }

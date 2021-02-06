@@ -1,0 +1,15 @@
+button {
+	align-self: flex-end;
+    margin: 10px 10px 10px auto;
+	width: 200px;
+	height: 50px;
+	background-color: #BA2329;
+	color: white;
+	border-radius: 20px;
+	border: none;
+	outline: none;	
+}
+
+.center-btn {
+	margin: 10px auto;
+}

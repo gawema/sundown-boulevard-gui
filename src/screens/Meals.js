@@ -1,5 +1,6 @@
 import React from 'react';
 import './Meals.css'
+import OrderStatusBox from '../components/OrderStatusBox'
 
 const Meals = () => {
 
@@ -9,7 +10,7 @@ const Meals = () => {
 				<img src={null} alt="Meals" />
 				<div className="meal-description"></div>
 			</div>
-			<div className="order-details box "></div>
+			<OrderStatusBox command="NEXT" nextStep="select-drinks"/>
 		</>
 	);
 }

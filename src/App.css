@@ -2,3 +2,15 @@
 	height: inherit;
 	width: inherit;
 }
+.screen-container {
+	margin: 0 auto;	
+	width: 60vw;
+	min-width: 500px;
+	height: 75vh;
+	min-height: 500px;
+	padding: 30px;
+	display: grid;	
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-gap: 20px
+}
