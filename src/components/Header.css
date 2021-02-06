@@ -1,0 +1,15 @@
+
+* {
+	/* border: 1px solid gray;	 */
+}
+
+.header {
+	margin: 0 auto;	
+	width: 70vw;
+	min-width: 700px;
+	min-height: 50px;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content:space-around;
+}
