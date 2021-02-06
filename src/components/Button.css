@@ -5,6 +5,11 @@ button {
 	height: 50px;
 	background-color: #BA2329;
 	color: white;
+	text-decoration: uppercase;
+	letter-spacing: 1px;
+    font-family: 'Roboto Condensed';
+    font-size: 1rem;
+    font-weight: bold;
 	border-radius: 20px;
 	border: none;
 	outline: none;	
