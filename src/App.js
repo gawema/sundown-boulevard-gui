@@ -1,10 +1,10 @@
 import './App.css';
 import Header from './components/Header'
-import Home from './pages/Home';
-import Meals from './pages/Meals';
-import Drinks from './pages/Drinks';
-import Order from './pages/Order';
-import Receipt from './pages/Receipt';
+import Home from './pages/home/Home';
+import Meals from './pages/meals/Meals';
+import Drinks from './pages/drinks/Drinks';
+import Order from './pages/order/Order';
+import Receipt from './pages/receipt/Receipt';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';

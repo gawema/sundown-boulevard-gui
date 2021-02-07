@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './Order.css'
 import { useHistory } from "react-router-dom";
-import Button from '../components/Button'
+import Button from '../../components/Button'
 import { Calendar, utils } from "react-modern-calendar-datepicker";
 import { TimePicker } from 'antd';
 import moment from 'moment';

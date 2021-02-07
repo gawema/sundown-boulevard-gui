@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './Drinks.css'
-import OrderStatusBox from '../components/OrderStatusBox'
+import OrderStatusBox from '../../components/OrderStatusBox'
 import { useHistory } from "react-router-dom";
 
 

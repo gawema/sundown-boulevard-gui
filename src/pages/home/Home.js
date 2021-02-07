@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './Home.css'
 import { useHistory } from "react-router-dom";
-import Button from '../components/Button'
-import OrderStatusBox from '../components/OrderStatusBox'
-import Slideshow from '../components/Slideshow'
+import Button from '../../components/Button'
+import OrderStatusBox from '../../components/OrderStatusBox'
+import Slideshow from '../../components/Slideshow'
 
 const Home = () => {
 

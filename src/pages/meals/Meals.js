@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import './Meals.css'
-import Button from '../components/Button'
+import Button from '../../components/Button'
 import { useHistory } from "react-router-dom";
-import OrderStatusBox from '../components/OrderStatusBox'
+import OrderStatusBox from '../../components/OrderStatusBox'
 
 const Meals = () => {
 	const history = useHistory();
