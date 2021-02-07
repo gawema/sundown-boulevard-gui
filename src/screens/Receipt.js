@@ -12,7 +12,7 @@ const Receipt = () => {
 	return (
 		<>
 			<div className="receipt box">
-				<h2>Receipt</h2>
+				<h4>Receipt</h4>
 			</div>
 			<Button command="BACK TO HOME" onClick={() => {
 					history.push({

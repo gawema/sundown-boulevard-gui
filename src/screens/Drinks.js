@@ -8,34 +8,34 @@ const Drinks = () => {
 		<>
 			<div className="driks box">
 				<div className="drink-card box">
-					<h2>Name</h2>
+					<h4>Name</h4>
 				</div>
 				<div className="drink-card box">
-					<h2>Name</h2>
+					<h4>Name</h4>
 				</div>
 				<div className="drink-card box">
-					<h2>Name</h2>
+					<h4>Name</h4>
 				</div>
 				<div className="drink-card box">
-					<h2>Name</h2>
+					<h4>Name</h4>
 				</div>
 				<div className="drink-card box">
-					<h2>Name</h2>
+					<h4>Name</h4>
 				</div>
 				<div className="drink-card box">
-					<h2>Name</h2>
+					<h4>Name</h4>
 				</div>
 				<div className="drink-card box">
-					<h2>Name</h2>
+					<h4>Name</h4>
 				</div>
 				<div className="drink-card box">
-					<h2>Name</h2>
+					<h4>Name</h4>
 				</div>
 				<div className="drink-card box">
-					<h2>Name</h2>
+					<h4>Name</h4>
 				</div>
 				<div className="drink-card box">
-					<h2>Name</h2>
+					<h4>Name</h4>
 				</div>
 			</div>
 			<OrderStatusBox command="NEXT" nextStep="place-order"/>

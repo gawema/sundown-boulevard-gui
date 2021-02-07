@@ -6,6 +6,7 @@ import Drinks from './screens/Drinks';
 import Order from './screens/Order';
 import Receipt from './screens/Receipt';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

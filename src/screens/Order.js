@@ -15,7 +15,7 @@ const Order = () => {
 	return (
 		<>
 			<div className="order box">
-				<h2>order header</h2>
+				<h4>order header</h4>
 					<div>
 					<Calendar
 						// className={}

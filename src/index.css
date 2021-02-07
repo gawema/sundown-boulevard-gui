@@ -41,10 +41,9 @@ a {
   justify-content: space-between;
 }
 
-.box > h2 {
+.box > h4 {
   color: #BA2329;
   text-transform: uppercase;
-  max-width: 200px;
   font-weight: bolder;
   height: fit-content;
   margin: 0;
