@@ -27,7 +27,7 @@ const Home = () => {
 			<div className="slideshow box">
 				<Slideshow />
 			</div>
-			<OrderStatusBox title="order flow box" command="ORDER" nextStep="select-meal"/>
+			<OrderStatusBox title="order flow box" command="NEW ORDER" nextStep="select-meal"/>
 			<div className="find box">
 				<h4>Find your order</h4>
 				<div className="input-container">

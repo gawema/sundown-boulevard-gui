@@ -11,9 +11,15 @@ const Meals = () => {
 	const [meal, setMeal] = useState({})
 
 	useEffect(() => {
-		fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+order['meal_id'])
-		.then(response => response.json())
-		.then(data => setMeal(data.meals[0]))
+		if(order.meal_id.length > 1){
+			fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+order['meal_id'])
+			.then(response => response.json())
+			.then(data => setMeal(data.meals[0]))
+		}else{
+			fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+			.then(response => response.json())
+			.then(data => {setMeal(data.meals[0]); setOrder({...order, meal_id: data.meals[0]['idMeal']})})
+		}
 	},[])
 
 	useEffect(() => {

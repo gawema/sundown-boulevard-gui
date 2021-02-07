@@ -30,15 +30,17 @@ const Order = () => {
 	},[order])
 
 	const submitOrder = async() => {
-		let copyOder = {...order}
-		copyOder.email = email;
-		copyOder.date = selectedDate;
-		copyOder.time = selectedTime;
-		copyOder.guests = numberOfGuest;
-		localStorage.setItem('order', JSON.stringify(copyOder))
-		history.push({
-			pathname: "receipt",
-		})
+		if(email.length > 1){
+			let copyOder = {...order}
+			copyOder.email = email;
+			copyOder.date = selectedDate;
+			copyOder.time = selectedTime;
+			copyOder.guests = numberOfGuest;
+			localStorage.setItem('order', JSON.stringify(copyOder))
+			history.push({
+				pathname: "receipt",
+			})
+		}
 	}
 
 	return (
