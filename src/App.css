@@ -5,7 +5,7 @@
 .screen-container {
 	margin: 0 auto;	
 	width: 60vw;
-	min-width: 500px;
+	min-width: 600px;
 	height: 75vh;
 	min-height: fit-content;
 	display: grid;	

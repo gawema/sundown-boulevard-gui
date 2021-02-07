@@ -7,7 +7,8 @@ import Order from './screens/Order';
 import Receipt from './screens/Receipt';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'react-modern-calendar-datepicker/lib/DatePicker.css';
+import 'antd/dist/antd.css';
 
 function App() {
   return (
