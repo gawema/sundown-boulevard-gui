@@ -1,10 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Home.css'
+import { useHistory } from "react-router-dom";
 import Button from '../components/Button'
 import OrderStatusBox from '../components/OrderStatusBox'
 import Slideshow from '../components/Slideshow'
 
 const Home = () => {
+
+	const history = useHistory();
+
+	const [searchEmail, setSearchEmail] = useState("test@test.com")
+
+	const getOrderByEmail = () => {
+		fetch('http://localhost:3001/orders?guest_email='+searchEmail)
+		.then(response => response.json())
+		.then(data => localStorage.setItem('order', JSON.stringify(data[0])))
+		.then(() => {
+			history.push({
+				pathname: 'select-meal',
+			})
+		});
+	}
 
 	return (
 		<>
@@ -15,10 +31,10 @@ const Home = () => {
 			<div className="find box">
 				<h4>Find your order</h4>
 				<div className="input-container">
-					<label className="primary-font-color" for="lname">Enter Email</label>
-					<input type="text" id="lname" name="lname" />
+					<label className="primary-font-color" for="search-email">Enter Email</label>
+					<input type="email" id="search-email" name="search-email" value={searchEmail} onChange={e => setSearchEmail(e.target.value)}/>
 				</div>
-				<Button command="FIND" onClick={() => alert('ok')}></Button>
+				<Button command="FIND" onClick={getOrderByEmail}></Button>
 			</div>
 			<div className="content box">
 				<h4>Content Box</h4>

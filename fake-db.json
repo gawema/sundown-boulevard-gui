@@ -1,0 +1,10 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "guest_email": "test@test.com",
+      "meal_id": "52772",
+      "driks": ["1","2","3"]
+    }
+  ]
+}
