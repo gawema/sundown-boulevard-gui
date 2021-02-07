@@ -37,9 +37,50 @@ const Order = () => {
 			copyOder.time = selectedTime;
 			copyOder.guests = numberOfGuest;
 			localStorage.setItem('order', JSON.stringify(copyOder))
-			history.push({
-				pathname: "receipt",
+			fetch('http://localhost:3001/orders?email='+email)
+			.then(response => response.json())
+			.then(data => {
+				if(data[0]){
+					fetch('http://localhost:3001/orders/'+order.id, {
+						headers: {
+							'Accept': 'application/json',
+							'Content-Type': 'application/json'
+						  },
+						method: 'PATCH',
+						body: JSON.stringify(copyOder)
+					})
+					.then(res => {
+						console.log(copyOder);
+						console.log(res)
+						history.push({
+							pathname: 'receipt',
+						})
+					});
+				}
+				else {
+					fetch('http://localhost:3001/orders', {
+						headers: {
+							'Accept': 'application/json',
+							'Content-Type': 'application/json'
+						  },
+						method: 'POST',
+						body: JSON.stringify(copyOder)
+					})
+					.then(res => {
+						console.log(copyOder);
+						console.log(res)
+						history.push({
+							pathname: 'receipt',
+						})
+					});
+				}
 			})
+			.then(() => {
+				history.push({
+					pathname: 'select-meal',
+				})
+			}).catch(e=>console.log(e));
+
 		}
 	}
 

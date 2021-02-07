@@ -5,3 +5,7 @@
 	grid-column-start: 2;
 	grid-column-end: 6;
 }
+
+.receipt h5 {
+	color: #BA2329
+}

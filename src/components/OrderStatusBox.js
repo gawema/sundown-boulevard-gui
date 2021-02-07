@@ -5,6 +5,7 @@ import Button from './Button'
 
 var today = new Date();
 const newOrder = {
+	id: Date.now(),
 	email: "",
 	meal_id: "",
 	drinks: [],

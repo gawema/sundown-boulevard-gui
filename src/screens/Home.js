@@ -14,12 +14,19 @@ const Home = () => {
 	const getOrderByEmail = () => {
 		fetch('http://localhost:3001/orders?email='+searchEmail)
 		.then(response => response.json())
-		.then(data => localStorage.setItem('order', JSON.stringify(data[0])))
+		.then(data => {
+			if(data[0]){
+				localStorage.setItem('order', JSON.stringify(data[0]));
+			}
+			else {
+				throw new Error('not found')
+			}
+		})
 		.then(() => {
 			history.push({
 				pathname: 'select-meal',
 			})
-		});
+		}).catch(e=>console.log(e));
 	}
 
 	return (
