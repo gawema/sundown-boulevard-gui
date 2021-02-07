@@ -12,11 +12,7 @@ const Drinks = () => {
 	const [allDrinks, setAllDrinks] = useState([])
 
 	useEffect(() => {
-		if(!order){
-			history.push({
-				pathname: '/',
-			})
-		}
+		if (!order) {history.push({pathname: '/'})}
 		fetch('https://api.punkapi.com/v2/beers')
 		.then(response => response.json())
 		.then(data => setAllDrinks(data))

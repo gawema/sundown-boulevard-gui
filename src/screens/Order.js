@@ -6,21 +6,40 @@ import { Calendar, utils } from "react-modern-calendar-datepicker";
 import { TimePicker } from 'antd';
 import moment from 'moment';
 
-
-
 const Order = () => {
 
 	const history = useHistory();
-	const [selectedDay, setSelectedDay] = useState(null);
-	const [numberOfGuest, setNumberOfGuest] = useState(1);
-	const [email, setEmail] = useState("test@test.com")
 
+
+	const [order] = useState(JSON.parse(localStorage.getItem('order')))
+	const [selectedDate, setSelectedDate] = useState(null);
+	const [selectedTime, setSelectedTime] = useState(null);
+	const [numberOfGuest, setNumberOfGuest] = useState(1);
+	const [email, setEmail] = useState()
 
 	useEffect(() => {
-		console.log(selectedDay)
-	},[selectedDay])
+		if (!order) {history.push({pathname: '/'})}
+		setEmail(order.email)
+		console.log(order)
+		setSelectedDate(order.date)
+		setSelectedTime(order.time)
+		setNumberOfGuest(order.guests)
+	},[])
 
+	useEffect(() => {
+	},[order])
 
+	const submitOrder = async() => {
+		let copyOder = {...order}
+		copyOder.email = email;
+		copyOder.date = selectedDate;
+		copyOder.time = selectedTime;
+		copyOder.guests = numberOfGuest;
+		localStorage.setItem('order', JSON.stringify(copyOder))
+		history.push({
+			pathname: "receipt",
+		})
+	}
 
 	return (
 		<>
@@ -30,14 +49,15 @@ const Order = () => {
 					<div className="left">
 						<Calendar
 						colorPrimary="#BA2329" 
-						value={selectedDay}
-						onChange={setSelectedDay}
+						value={selectedDate}
+						onChange={(date) => setSelectedDate(date)}
 						minimumDate={utils().getToday()}
 						shouldHighlightWeekends
 						/>
 						<TimePicker
+						value={moment(selectedTime, 'HH:mm')}
 						minuteStep={15}
-						onChange={()=>console.log('message')}
+						onChange={(time,timeString)=>setSelectedTime(timeString)}
 						defaultOpenValue={moment('16:00', 'HH:mm')}
 						format={'HH:mm'}
 						disabledHours={() => [0,1,2,3,4,5,6,7,8,9,10,11,12,13,23]}
@@ -69,11 +89,7 @@ const Order = () => {
 						</div>
 					</div>
 				</div>
-				<Button command="ORDER" onClick={() => {
-					history.push({
-						pathname: "receipt",
-					})
-				}} />
+				<Button command="ORDER" onClick={submitOrder} />
 			</div>
 		</>
 	);

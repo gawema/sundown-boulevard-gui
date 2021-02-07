@@ -12,7 +12,7 @@ const Home = () => {
 	const [searchEmail, setSearchEmail] = useState("test@test.com")
 
 	const getOrderByEmail = () => {
-		fetch('http://localhost:3001/orders?guest_email='+searchEmail)
+		fetch('http://localhost:3001/orders?email='+searchEmail)
 		.then(response => response.json())
 		.then(data => localStorage.setItem('order', JSON.stringify(data[0])))
 		.then(() => {
