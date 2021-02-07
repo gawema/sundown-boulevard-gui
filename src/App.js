@@ -1,14 +1,16 @@
 import './App.css';
-import Header from './components/Header'
-import Home from './pages/home/Home';
-import Meals from './pages/meals/Meals';
-import Drinks from './pages/drinks/Drinks';
-import Order from './pages/order/Order';
-import Receipt from './pages/receipt/Receipt';
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import 'antd/dist/antd.css';
+
+import { Route, BrowserRouter as Router } from "react-router-dom";
+
+import Drinks from './pages/drinks/Drinks';
+import Header from './components/Header'
+import Home from './pages/home/Home';
+import Meals from './pages/meals/Meals';
+import Order from './pages/order/Order';
+import Receipt from './pages/receipt/Receipt';
 
 function App() {
   return (

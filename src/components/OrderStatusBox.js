@@ -1,7 +1,6 @@
-import React from 'react';
-// import './OrderStatusBox.css'
-import { useHistory } from "react-router-dom";
 import Button from './Button'
+import React from 'react';
+import { useHistory } from "react-router-dom";
 
 var today = new Date();
 const newOrder = {

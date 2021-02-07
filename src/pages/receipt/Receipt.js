@@ -1,8 +1,9 @@
-import React,{useState} from 'react';
 import './Receipt.css'
-import { useHistory } from "react-router-dom";
-import Button from '../../components/Button'
 
+import React,{useState} from 'react';
+
+import Button from '../../components/Button'
+import { useHistory } from "react-router-dom";
 
 const Receipt = () => {
 

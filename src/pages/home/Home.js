@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
 import './Home.css'
-import { useHistory } from "react-router-dom";
+
+import React, {useState} from 'react';
+
 import Button from '../../components/Button'
 import OrderStatusBox from '../../components/OrderStatusBox'
 import Slideshow from '../../components/Slideshow'
+import { useHistory } from "react-router-dom";
 
 const Home = () => {
 
