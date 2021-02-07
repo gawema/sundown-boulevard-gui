@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from 'react';
 import './Drinks.css'
-import OrderStatusBox from '../../components/OrderStatusBox'
-import { useHistory } from "react-router-dom";
 
+import React, {useEffect, useState} from 'react';
+
+import OrderStatusBox from '../../components/OrderStatusBox'
+import { getAllDrinks } from '../../utils/httpClient'
+import { useHistory } from "react-router-dom";
 
 const Drinks = () => {
 
@@ -13,10 +15,10 @@ const Drinks = () => {
 
 	useEffect(() => {
 		if (!order) {history.push({pathname: '/'})}
-		fetch('https://api.punkapi.com/v2/beers')
-		.then(response => response.json())
-		.then(data => setAllDrinks(data))
-		console.log(order?.drinks)
+		const getDrinks = async () => {
+			setAllDrinks(await getAllDrinks())
+		}
+		getDrinks();
 	},[])
 
 

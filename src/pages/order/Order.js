@@ -2,11 +2,12 @@ import './Order.css'
 
 import { Calendar, utils } from "react-modern-calendar-datepicker";
 import React, {useEffect, useState} from 'react';
+import { addOrUpdateOrder, getOrderByEmail } from '../../utils/httpClient';
 
 import Button from '../../components/Button'
 import { TimePicker } from 'antd';
 import moment from 'moment';
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 
 const Order = () => {
 
@@ -39,50 +40,13 @@ const Order = () => {
 			copyOder.time = selectedTime;
 			copyOder.guests = numberOfGuest;
 			localStorage.setItem('order', JSON.stringify(copyOder))
-			fetch('http://localhost:3001/orders?email='+email)
-			.then(response => response.json())
-			.then(data => {
-				if(data[0]){
-					fetch('http://localhost:3001/orders/'+order.id, {
-						headers: {
-							'Accept': 'application/json',
-							'Content-Type': 'application/json'
-						  },
-						method: 'PATCH',
-						body: JSON.stringify(copyOder)
-					})
-					.then(res => {
-						console.log(copyOder);
-						console.log(res)
-						history.push({
-							pathname: 'receipt',
-						})
-					});
-				}
-				else {
-					fetch('http://localhost:3001/orders', {
-						headers: {
-							'Accept': 'application/json',
-							'Content-Type': 'application/json'
-						  },
-						method: 'POST',
-						body: JSON.stringify(copyOder)
-					})
-					.then(res => {
-						console.log(copyOder);
-						console.log(res)
-						history.push({
-							pathname: 'receipt',
-						})
-					});
-				}
-			})
-			.then(() => {
-				history.push({
-					pathname: 'select-meal',
-				})
-			}).catch(e=>console.log(e));
 
+			const response = await addOrUpdateOrder(email, copyOder)
+			if(response.id) {
+				history.push({
+					pathname: 'receipt',
+				})
+			}
 		}
 	}
 

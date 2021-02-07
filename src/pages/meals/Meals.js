@@ -1,6 +1,7 @@
 import './Meals.css'
 
 import React, {useEffect, useState} from 'react';
+import { getMealbyId, getRandomMeal } from '../../utils/httpClient'
 
 import Button from '../../components/Button'
 import OrderStatusBox from '../../components/OrderStatusBox'
@@ -13,15 +14,17 @@ const Meals = () => {
 	const [meal, setMeal] = useState({})
 
 	useEffect(() => {
-		if(order.meal_id.length > 1){
-			fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+order['meal_id'])
-			.then(response => response.json())
-			.then(data => setMeal(data.meals[0]))
-		}else{
-			fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-			.then(response => response.json())
-			.then(data => {setMeal(data.meals[0]); setOrder({...order, meal_id: data.meals[0]['idMeal']})})
+		if (!order) {history.push({pathname: '/'})}
+		const getMeal = async () => {
+			if(order.meal_id.length > 1){
+				setMeal(await getMealbyId(order.meal_id));
+			}else{
+				const meal = await getRandomMeal();
+				setMeal(meal);
+				setOrder({...order, meal_id: meal['idMeal']})
+			}
 		}
+		getMeal()
 	},[])
 
 	useEffect(() => {
@@ -31,6 +34,8 @@ const Meals = () => {
 
 	return (
 		<>
+		{meal?.strMeal &&
+			<>		
 			<div className="meal">
 				<div className="box no-bottom-border">
 					<img src={meal.strMealThumb} alt="Meals" />
@@ -39,16 +44,18 @@ const Meals = () => {
 					<h4>{meal.strMeal}</h4>
 					<h4>{order.meal_id}</h4>
 				</div>
-				<Button command="GENERATE NEW" onClick={() => {
-					fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-					.then(response => response.json())
-					.then(data => {setMeal(data.meals[0]); setOrder({...order, meal_id: data.meals[0]['idMeal']})})
+				<Button command="GENERATE NEW" onClick={async() => {
+					const meal = await getRandomMeal();
+					setMeal(meal);
+					setOrder({...order, meal_id: meal['idMeal']})
 				}}
 				style={{
 					margin: "20px 0 0 auto"
 				}}/>
 			</div>
 			<OrderStatusBox command="NEXT" nextStep="select-drinks"/>
+			</>
+		}
 		</>
 	);
 }
