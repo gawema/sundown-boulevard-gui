@@ -10,5 +10,7 @@
 	width: 60vw;
 }
  .header > div {
-	 cursor: pointer
+	 cursor: pointer;
+	 font-family:  'Roboto Condensed', 'Helvetica Neue';
+	 font-weight: bold;
  }

@@ -32,17 +32,28 @@
     width: 200px;
 }
 
-.counter>div {
+.counter > div {
     align-items: center;
     border-radius: 50%;
-    border: 2px solid #333;
+    /* border: 2px solid #333; */
     cursor: pointer;
     display: flex;
     height: 40px;
     justify-content: center;
     width: 40px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    border: none;
+    transition:  box-shadow 0.2s;
+    cursor:pointer;
 }
 
+.counter > div:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.counter > h4 {
+    margin-top: 0.5rem;
+}
 
 .Calendar__day.-weekend {
     pointer-events: none !important;
@@ -50,12 +61,15 @@
 
 .Calendar {
     border-radius: 3px !important;
-    border: 3px solid #333 !important;
-    box-shadow: none !important;
+    /* border: 3px solid #333 !important; */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px !important;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px !important;
+        /* box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset !important; */
     height: 300px;
     min-height: 300px !important;
     padding: 10px !important;
     width: 35em !important;
+
 }
 
 .ant-picker,
@@ -63,9 +77,9 @@
 .ant-picker:hover {
     -webkit-box-shadow: none;
     border-right-width: 3px !important;
-    border: 3px solid #333 !important;
+    border: none !important;
     margin-top: 20px !important;
-    box-shadow: none;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px !important;
 }
 
 .ant-btn-primary {
@@ -76,3 +90,4 @@
 .ant-picker-now a {
     color: var(--primary-color) !important;
 }
+

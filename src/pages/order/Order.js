@@ -97,7 +97,7 @@ const Order = () => {
 							<div onClick={() => setNumberOfGuest(numberOfGuest + 1)}
 								style={{
 									pointerEvents: `${numberOfGuest > 9 ? 'none' : 'auto'}`,
-									color: `${numberOfGuest > 9 ? 'gray' : 'black'}`
+									color: `${numberOfGuest > 9 ? 'lightgray' : 'black'}`
 								}}
 							>+</div>
 						</div>

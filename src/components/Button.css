@@ -1,7 +1,7 @@
 .primary-btn {
     align-self: flex-end;
     background-color: var(--primary-color);
-    border-radius: 20px;
+    border-radius: 5px;
     border: none;
     color: white;
     font-family: 'Roboto Condensed';
@@ -14,6 +14,11 @@
     outline: none;
     text-decoration: uppercase;
     width: 200px;
+    transition:  box-shadow 0.2s;
+
+}
+.primary-btn:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .center {

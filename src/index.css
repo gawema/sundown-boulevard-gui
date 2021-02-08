@@ -13,7 +13,7 @@
 
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', 'Roboto Condensed', sans-serif;
+  font-family:  'Roboto Condensed', 'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -36,58 +36,3 @@ a {
   color: var(--secondary-color);
 }
 
-.App {
-  height: inherit;
-  width: inherit;
-}
-
-.screen-container {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  height: 75vh;
-  margin: 0 auto;
-  min-height: fit-content;
-  min-width: 600px;
-  width: 60vw;
-}
-
-
-.box {
-  border-radius: 3px;
-  border: 5px solid #333;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
-  padding: 20px;
-  width: 100%;
-}
-
-.box>h4 {
-  color: #BA2329;
-  font-weight: bolder;
-  height: fit-content;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-size: 16px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-input {
-  border-radius: 3px;
-  border: 2px solid #333;
-  outline: none;
-  padding: 10px;
-}

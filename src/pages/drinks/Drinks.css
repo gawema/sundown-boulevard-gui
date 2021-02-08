@@ -13,13 +13,18 @@
 }
 
 .drink-card {
-
-    border: 3px solid #333;
+    border: 3px solid white;
     height: 200px;
     margin: 10px;
     position: relative;
     width: 40%;
     z-index: 0;
+    transition: all 0.3s ease 0s;
+    bottom: 0
+}
+.drink-card:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    bottom: 10px;
 }
 
 .backdrop {
@@ -36,8 +41,8 @@
     font-size: 16px;
     position: absolute;
     z-index: 3;
-    bottom: 5px;
-    left: 5px;
+    bottom: 10px;
+    left: 10px;
     max-height: 20px;
     overflow: hidden;
 }

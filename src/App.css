@@ -1,15 +1,68 @@
+h3, h4, h5, h6 {
+	font-family:  'Roboto Condensed', 'Helvetica Neue';
+}
+
 .App {
 	height: inherit;
 	width: inherit;
-}
-.screen-container {
-	margin: 0 auto;	
-	width: 60vw;
-	min-width: 600px;
-	height: 75vh;
-	min-height: fit-content;
-	display: grid;	
+  }
+  
+  .screen-container {
+	display: grid;
+	grid-gap: 20px;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-	grid-gap: 20px
+	height: 75vh;
+	margin: 0 auto;
+	min-height: fit-content;
+	min-width: 600px;
+	width: 60vw;
+  }
+  
+  
+  .box {
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+	padding: 20px;
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  
+  .box>h4 {
+	color: var(--primary-color);
+	font-weight: bolder;
+	height: fit-content;
+	margin: 0;
+	text-transform: uppercase;
+  }
+  
+  
+  .input-container {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  label {
+	font-size: 16px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+  }
+  
+  input {
+	border-radius: 3px;
+	outline: none;
+	padding: 10px;
+
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px !important;
+    border: none;
+    transition:  box-shadow 0.2s;
 }
+input:focus {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px !important;
+	border: none;
+}
+    

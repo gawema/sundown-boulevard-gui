@@ -45,7 +45,7 @@ const Drinks = () => {
 					return (
 						<div key={drink.id} className="drink-card box"
 							style={{
-								borderColor: `${order?.drinks?.indexOf(drink.id) !== -1 && order?.drinks ? '#BA2329' : '#333'}`
+								borderColor: `${order?.drinks?.indexOf(drink.id) !== -1 && order?.drinks ? '#BA2329' : 'white'}`
 							}} onClick={() => updateOrder(drink.id)}>
 							<div className="backdrop" style={{
 								backgroundImage: `url(${drink.image_url})`,
