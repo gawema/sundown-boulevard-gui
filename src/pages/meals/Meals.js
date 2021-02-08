@@ -1,6 +1,6 @@
 import './Meals.css'
 
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { getMealbyId, getRandomMeal } from '../../utils/httpClient'
 
 import Button from '../../components/Button'
@@ -14,48 +14,48 @@ const Meals = () => {
 	const [meal, setMeal] = useState({})
 
 	useEffect(() => {
-		if (!order) {history.push({pathname: '/'})}
+		if (!order) { history.push({ pathname: '/' }) }
 		const getMeal = async () => {
-			if(order.meal_id.length > 1){
+			if (order.meal_id.length > 1) {
 				setMeal(await getMealbyId(order.meal_id));
-			}else{
+			} else {
 				const meal = await getRandomMeal();
 				setMeal(meal);
-				setOrder({...order, meal_id: meal['idMeal']})
+				setOrder({ ...order, meal_id: meal['idMeal'] })
 			}
 		}
 		getMeal()
-	},[])
+	}, [])
 
 	useEffect(() => {
 		localStorage.setItem('order', JSON.stringify(order))
-	},[order])
+	}, [order])
 
 
 	return (
 		<>
-		{meal?.strMeal &&
-			<>		
-			<div className="meal">
-				<div className="box no-bottom-border">
-					<img src={meal.strMealThumb} alt="Meals" />
-				</div>
-				<div className="meal-description box">
-					<h4>{meal.strMeal}</h4>
-					<h4>{order.meal_id}</h4>
-				</div>
-				<Button command="GENERATE NEW" onClick={async() => {
-					const meal = await getRandomMeal();
-					setMeal(meal);
-					setOrder({...order, meal_id: meal['idMeal']})
-				}}
-				style={{
-					margin: "20px 0 0 auto"
-				}}/>
-			</div>
-			<OrderStatusBox command="NEXT" nextStep="select-drinks"/>
-			</>
-		}
+			{meal?.strMeal &&
+				<>
+					<div className="meal">
+						<div className="box no-bottom-border">
+							<img src={meal.strMealThumb} alt="Meals" />
+						</div>
+						<div className="meal-description box">
+							<h4>{meal.strMeal}</h4>
+							<h4>{order.meal_id}</h4>
+						</div>
+						<Button command="GENERATE NEW" onClick={async () => {
+							const meal = await getRandomMeal();
+							setMeal(meal);
+							setOrder({ ...order, meal_id: meal['idMeal'] })
+						}}
+							style={{
+								margin: "20px 0 0 auto"
+							}} />
+					</div>
+					<OrderStatusBox command="NEXT" nextStep="select-drinks" />
+				</>
+			}
 		</>
 	);
 }

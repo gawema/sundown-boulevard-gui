@@ -14,7 +14,7 @@ const newOrder = {
 		year: today.getFullYear(),
 	},
 	time: "16:00",
-	guests: 1  
+	guests: 1
 }
 
 const OrderStatusBox = (props) => {
@@ -26,7 +26,7 @@ const OrderStatusBox = (props) => {
 			<div className="neworder box">
 				<h4>{props.title}</h4>
 				<Button command={props.command} onClick={() => {
-					if(props.command === "NEW ORDER"){
+					if (props.command === "NEW ORDER") {
 						localStorage.setItem('order', JSON.stringify(newOrder))
 					}
 					history.push({

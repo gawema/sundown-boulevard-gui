@@ -17,13 +17,13 @@ function App() {
     <div className="App">
       <Header />
       <div className="screen-container">
-      <Router>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/select-meal" component={Meals} />
-        <Route exact path="/select-drinks" component={Drinks} />
-        <Route exact path="/place-order" component={Order} />
-        <Route exact path="/receipt" component={Receipt} />
-      </Router>
+        <Router>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/select-meal" component={Meals} />
+          <Route exact path="/select-drinks" component={Drinks} />
+          <Route exact path="/place-order" component={Order} />
+          <Route exact path="/receipt" component={Receipt} />
+        </Router>
       </div>
     </div>
   );
