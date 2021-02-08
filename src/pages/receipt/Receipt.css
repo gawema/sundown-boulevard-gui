@@ -7,5 +7,5 @@
 }
 
 .receipt h5 {
-	color: #BA2329
+	color: var(--primary-color)
 }

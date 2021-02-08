@@ -1,28 +1,25 @@
-
 .meal {
-	grid-row-start: 1;
-	grid-row-end: 3;
-	grid-column-start: 1;
-	grid-column-end: 5;
-
-	display: grid;
-	grid-template-rows: 1fr 1fr auto;
+    grid-row-start: 1;
+    display: grid;
+    grid-column-end: 5;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-template-rows: 1fr 1fr auto;
 }
 
 .no-bottom-border {
-	border-bottom: none;
-	padding: 0;	
-	margin-bottom: 0 !important;
-	height: 273px;
-
+    border-bottom: none;
+    height: 273px;
+    margin-bottom: 0 !important;
+    padding: 0;
 }
 
 .meal img {
-	object-fit: cover;
+    object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
 .meal div {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }

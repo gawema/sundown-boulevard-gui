@@ -1,17 +1,13 @@
 
-* {
-	/* border: 1px solid gray;	 */
-}
-
 .header {
-	margin: 0 auto;	
-	width: 60vw;
-	min-width: 500px;
-	min-height: 50px;
-	padding: 20px;
-	display: flex;
 	align-items: center;
+	display: flex;
 	justify-content:space-around;
+	margin: 0 auto;
+	min-height: 50px;
+	min-width: 500px;
+	padding: 20px;
+	width: 60vw;
 }
  .header > div {
 	 cursor: pointer

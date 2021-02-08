@@ -1,53 +1,52 @@
-
 .drinks {
-	grid-row-start: 1;
-	grid-row-end: 3;
-	grid-column-start: 1;
-	grid-column-end: 5;
 
-	display: flex;
-	flex-wrap: wrap;
-	overflow: scroll;
-	overflow-x: hidden;
-	flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-column-end: 5;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-row-start: 1;
+    overflow-x: hidden;
+    overflow: scroll;
     justify-content: space-around;
 }
 
 .drink-card {
-	width: 40%;
-	margin: 10px;
-	height: 200px;
-	border: 3px solid #333;
-	background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 3px solid #333;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+    width: 40%;
+    z-index: 0;
     background-position: center;
-	background-size: contain;
-	position: relative;
-	z-index: 0;
 }
 
 .backdrop {
-	background-color: rgba(255, 255, 255, 0.649);
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
+    background-color: rgba(255, 255, 255, 0.649);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
     left: 0;
     z-index: 2;
 }
 
-.drink-card  h4{
-	z-index: 3;
-	font-size: 16px;
-	position: absolute;
+.drink-card h4 {
+    font-size: 16px;
+    position: absolute;
+    z-index: 3;
     bottom: 5px;
     left: 5px;
 }
 
 .dish img {
-	border-bottom: 3px solid #333;
+    border-bottom: 3px solid #333;
 }
 
 .order-details {
-	grid-column-start: 5;
-	grid-column-end: 7;
+    grid-column-end: 7;
+    grid-column-start: 5;
 }

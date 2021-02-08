@@ -1,21 +1,21 @@
 .primary-btn {
-    margin-top: 10px;
-    width: 200px;
-    max-width: 100%;
-    height: 50px;
-    background-color: #BA2329;
+    align-self: flex-end;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    border: none;
     color: white;
-    text-decoration: uppercase;
-    letter-spacing: 1px;
     font-family: 'Roboto Condensed';
     font-size: 1rem;
     font-weight: bold;
-    border-radius: 20px;
-    border: none;
-	outline: none;
-	align-self: flex-end;
+    height: 50px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    max-width: 100%;
+    outline: none;
+    text-decoration: uppercase;
+    width: 200px;
 }
 
 .center {
-	align-self: center;
+    align-self: center;
 }
