@@ -25,14 +25,14 @@ const OrderStatusBox = (props) => {
 		<>
 			<div className="neworder box">
 				<h4>{props.title}</h4>
-				<Button command={props.command} onClick={() => {
+				<Button style={props.style} command={props.command} onClick={() => {
 					if (props.command === "NEW ORDER") {
 						localStorage.setItem('order', JSON.stringify(newOrder))
 					}
 					history.push({
 						pathname: props.nextStep,
 					})
-				}} center />
+				}} center/>
 			</div>
 		</>
 	);

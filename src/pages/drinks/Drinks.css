@@ -13,25 +13,23 @@
 }
 
 .drink-card {
-    background-repeat: no-repeat;
-    background-size: contain;
+
     border: 3px solid #333;
     height: 200px;
     margin: 10px;
     position: relative;
     width: 40%;
     z-index: 0;
-    background-position: center;
 }
 
 .backdrop {
-    background-color: rgba(255, 255, 255, 0.649);
+    margin: 10px;
     height: 100%;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    left: 0;
     z-index: 2;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
 }
 
 .drink-card h4 {
@@ -40,6 +38,8 @@
     z-index: 3;
     bottom: 5px;
     left: 5px;
+    max-height: 20px;
+    overflow: hidden;
 }
 
 .dish img {

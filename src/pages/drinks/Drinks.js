@@ -45,15 +45,21 @@ const Drinks = () => {
 					return (
 						<div key={drink.id} className="drink-card box"
 							style={{
-								backgroundImage: `url(${drink.image_url})`,
 								borderColor: `${order?.drinks?.indexOf(drink.id) !== -1 && order?.drinks ? '#BA2329' : '#333'}`
 							}} onClick={() => updateOrder(drink.id)}>
-							<div className="backdrop"></div>
+							<div className="backdrop" style={{
+								backgroundImage: `url(${drink.image_url})`,
+							}}></div>
 							<h4>{drink.name}</h4>
 						</div>)
 				})}
 			</div>
-			<OrderStatusBox command="NEXT" nextStep="place-order" />
+			<OrderStatusBox title="Choose your drinks" command="NEXT" nextStep="place-order"
+				style={{
+					pointerEvents:`${order?.drinks?.length < 1 ? 'none' : 'auto'}`,
+					backgroundColor:`${order?.drinks?.length < 1 ? '#ba232987' : '#ba2329'}`
+				}}
+			/>
 		</>
 	);
 }

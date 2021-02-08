@@ -42,7 +42,7 @@ const Meals = () => {
 						</div>
 						<div className="meal-description box">
 							<h4>{meal.strMeal}</h4>
-							<h4>{order.meal_id}</h4>
+							<p>{meal.strInstructions}</p>
 						</div>
 						<Button command="GENERATE NEW" onClick={async () => {
 							const meal = await getRandomMeal();
@@ -53,7 +53,7 @@ const Meals = () => {
 								margin: "20px 0 0 auto"
 							}} />
 					</div>
-					<OrderStatusBox command="NEXT" nextStep="select-drinks" />
+					<OrderStatusBox title="choose your meal" command="NEXT" nextStep="select-drinks" />
 				</>
 			}
 		</>

@@ -22,6 +22,7 @@ const Receipt = () => {
 				<h5>EMAIL: {order.email}</h5>
 			</div>
 			<Button command="BACK TO HOME" onClick={() => {
+				localStorage.removeItem('order')
 				history.push({
 					pathname: "/",
 				})

@@ -30,9 +30,14 @@ const Order = () => {
 
 	useEffect(() => {
 	}, [order])
-
+	
+	const validateEmail = (email) => {
+		const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(String(email).toLowerCase());
+	}
+	
 	const submitOrder = async () => {
-		if (email.length > 1) {
+		if (validateEmail(email)) {
 			let copyOder = { ...order }
 			copyOder.email = email;
 			copyOder.date = selectedDate;
@@ -48,6 +53,7 @@ const Order = () => {
 			}
 		}
 	}
+	
 
 	return (
 		<>
@@ -97,7 +103,12 @@ const Order = () => {
 						</div>
 					</div>
 				</div>
-				<Button command="ORDER" onClick={submitOrder} />
+				<Button command="ORDER" onClick={submitOrder} 
+				style={{
+					pointerEvents:`${!validateEmail(email) ? 'none' : 'auto'}`,
+					backgroundColor:`${!validateEmail(email) ? '#ba232987' : '#ba2329'}`
+				}}
+				/>
 			</div>
 		</>
 	);

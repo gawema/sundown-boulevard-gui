@@ -23,3 +23,20 @@
 .meal div {
     margin-bottom: 10px;
 }
+
+.meal-description {
+    max-height: 300px;
+}
+
+.meal-description > p {
+    font-size:1.5rem;
+    color: var(--primary-color);
+    overflow:hidden;
+    line-height: 2rem;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+}
