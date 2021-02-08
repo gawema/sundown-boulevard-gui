@@ -13,3 +13,6 @@
 	align-items: center;
 	justify-content:space-around;
 }
+ .header > div {
+	 cursor: pointer
+ }

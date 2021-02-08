@@ -15,10 +15,10 @@ const Header = () => {
 					cursor: "pointer"
 				}}
 			/>
-			<a href> RESTAURANTER </a>
-			<a href> PRODUKTER </a>
-			<a href> NYHEDSBREV </a>
-			<a href> KONTAKT </a>
+			<div> RESTAURANTER </div>
+			<div> PRODUKTER </div>
+			<div> NYHEDSBREV </div>
+			<div> KONTAKT </div>
 		</div>
 	);
 }

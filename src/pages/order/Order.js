@@ -2,10 +2,10 @@ import './Order.css'
 
 import { Calendar, utils } from "react-modern-calendar-datepicker";
 import React, {useEffect, useState} from 'react';
-import { addOrUpdateOrder, getOrderByEmail } from '../../utils/httpClient';
 
 import Button from '../../components/Button'
 import { TimePicker } from 'antd';
+import { addOrUpdateOrder } from '../../utils/httpClient';
 import moment from 'moment';
 import { useHistory } from "react-router-dom"
 
@@ -18,12 +18,11 @@ const Order = () => {
 	const [selectedDate, setSelectedDate] = useState(null);
 	const [selectedTime, setSelectedTime] = useState(null);
 	const [numberOfGuest, setNumberOfGuest] = useState(1);
-	const [email, setEmail] = useState()
+	const [email, setEmail] = useState('')
 
 	useEffect(() => {
 		if (!order) {history.push({pathname: '/'})}
 		setEmail(order.email)
-		console.log(order)
 		setSelectedDate(order.date)
 		setSelectedTime(order.time)
 		setNumberOfGuest(order.guests)
@@ -67,7 +66,7 @@ const Order = () => {
 						value={moment(selectedTime, 'HH:mm')}
 						minuteStep={15}
 						onChange={(time,timeString)=>setSelectedTime(timeString)}
-						defaultOpenValue={moment('16:00', 'HH:mm')}
+						defaultValue={moment('16:00', 'HH:mm')}
 						format={'HH:mm'}
 						disabledHours={() => [0,1,2,3,4,5,6,7,8,9,10,11,12,13,23]}
 						showNow="true"
@@ -76,7 +75,7 @@ const Order = () => {
 						/>
 					</div>
 					<div className="right">
-						<label className="primary-font-color" for="search-email">Select Number of Guest</label>
+						<label className="primary-font-color" htmlFor="search-email">Select Number of Guest</label>
 						<div className='counter'>
 							<div onClick={() => setNumberOfGuest(numberOfGuest - 1)}
 								style={{
@@ -93,7 +92,7 @@ const Order = () => {
 							>+</div>
 						</div>
 						<div className="input-container">
-							<label className="primary-font-color" for="search-email">Enter Email</label>
+							<label className="primary-font-color" htmlFor="search-email">Enter Email</label>
 							<input type="email" id="search-email" name="search-email" value={email} onChange={e => setEmail(e.target.value)}/>
 						</div>
 					</div>

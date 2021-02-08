@@ -36,7 +36,7 @@ const Home = () => {
 			<div className="find box">
 				<h4>Find your order </h4>
 				<div className="input-container">
-					<label className="primary-font-color" for="search-email">Enter Email {notFound}</label>
+					<label className="primary-font-color" htmlFor="search-email">Enter Email {notFound}</label>
 					<input type="email" id="search-email" name="search-email" value={email} onChange={e => setEmail(e.target.value)}/>
 				</div>
 				<Button command="FIND" onClick={findOrder}></Button>

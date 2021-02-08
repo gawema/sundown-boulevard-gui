@@ -12,7 +12,7 @@ const Drinks = () => {
 
 	const [order, setOrder] = useState(JSON.parse(localStorage.getItem('order')))
 	const [allDrinks, setAllDrinks] = useState([])
-
+	
 	useEffect(() => {
 		if (!order) {history.push({pathname: '/'})}
 		const getDrinks = async () => {
@@ -43,7 +43,7 @@ const Drinks = () => {
 			<div className="drinks box">
 				{allDrinks.map(drink => {
 					return(
-						<div className="drink-card box" 
+						<div key={drink.id} className="drink-card box" 
 							style={{
 								backgroundImage: `url(${drink.image_url})`,
 								borderColor: `${order?.drinks?.indexOf(drink.id) !== -1 && order?.drinks ? '#BA2329' : '#333'}`	
