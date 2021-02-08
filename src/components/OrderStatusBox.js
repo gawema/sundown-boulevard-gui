@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 
 var today = new Date();
 const newOrder = {
-	id: Date.now(),
 	email: "",
 	meal_id: "",
 	drinks: [],
