@@ -19,10 +19,14 @@ const Order = () => {
 	const [selectedTime, setSelectedTime] = useState(null);
 	const [numberOfGuest, setNumberOfGuest] = useState(1);
 	const [email, setEmail] = useState('')
+	const [isNew, setIsNew] = useState(true)
 
 	useEffect(() => {
 		if (!order) { history.push({ pathname: '/' }) }
-		setEmail(order.email)
+		if(validateEmail(order.email)){
+			setEmail(order.email)
+			setIsNew(false)
+		}
 		setSelectedDate(order.date)
 		setSelectedTime(order.time)
 		setNumberOfGuest(order.guests)
@@ -38,14 +42,14 @@ const Order = () => {
 	
 	const submitOrder = async () => {
 		if (validateEmail(email)) {
-			let copyOder = { ...order }
-			copyOder.email = email;
-			copyOder.date = selectedDate;
-			copyOder.time = selectedTime;
-			copyOder.guests = numberOfGuest;
-			localStorage.setItem('order', JSON.stringify(copyOder))
+			let copyOrder = { ...order }
+			copyOrder.email = email;
+			copyOrder.date = selectedDate;
+			copyOrder.time = selectedTime;
+			copyOrder.guests = numberOfGuest;
+			localStorage.setItem('order', JSON.stringify(copyOrder))
 
-			const response = await addOrUpdateOrder(email, copyOder)
+			const response = await addOrUpdateOrder(copyOrder)
 			if (response.id) {
 				history.push({
 					pathname: 'receipt',
@@ -103,7 +107,7 @@ const Order = () => {
 						</div>
 					</div>
 				</div>
-				<Button command="ORDER" onClick={submitOrder} 
+				<Button command={isNew ? 'ORDER' : 'UPDATE ORDER'} onClick={submitOrder} 
 				style={{
 					pointerEvents:`${!validateEmail(email) ? 'none' : 'auto'}`,
 					backgroundColor:`${!validateEmail(email) ? '#ba232987' : '#ba2329'}`

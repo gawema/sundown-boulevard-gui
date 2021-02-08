@@ -9,7 +9,7 @@ const newOrder = {
 	meal_id: "",
 	drinks: [],
 	date: {
-		day: today.getDate(),
+		day: today.getDate() + 1,
 		month: (today.getMonth() + 1),
 		year: today.getFullYear(),
 	},

@@ -39,8 +39,8 @@ const getOrderByEmail = (email) => {
   return fetchData(`${orders_api}?email=${email}`)
 }
 
-const addOrUpdateOrder = async (email, newOrder) => {
-  const foundOrder = await fetchData(`${orders_api}?email=${email}`)
+const addOrUpdateOrder = async (newOrder) => {
+  const foundOrder = await fetchData(`${orders_api}?id=${newOrder.id}`)
   if (foundOrder.length < 1) {
     return postData(orders_api, newOrder)
   } else {
